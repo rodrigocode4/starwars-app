@@ -7,11 +7,9 @@ describe('<App />', () => {
   test('deve renderizar App', () => {
     const { container } = render(<App />)
 
-    const heading = screen.getByRole('heading', {name: /hello world/i})
+    const heading = screen.getByRole('heading', { name: /hello world/i })
 
     expect(heading).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
   })
-
 })
-
