@@ -62,6 +62,36 @@ const GlobalStyle = createGlobalStyle`
     display: block;
       width: 100%;
       height: auto;
-  }`
+  }
+    /* width */
+  *::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  /* Track */
+  *::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 5px 15px 15px 5px;
+  }
+
+  /* Handle */
+  *::-webkit-scrollbar-thumb {
+    background: #ffe81f;
+    border-radius: 15px;
+  }
+
+  /* Handle on hover */
+  *::-webkit-scrollbar-thumb:hover {
+    background: #c0af15;
+  }
+
+  *::-webkit-scrollbar-button:single-button {
+    background-color: transparent;
+    display: block;
+    border-style: none;
+    height: 5px;
+    width: 5px;
+  }
+  `
 
 export default GlobalStyle
