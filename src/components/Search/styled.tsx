@@ -11,6 +11,8 @@ export const Form = styled.form`
   border-style: none;
   height: 58px;
   width: 306px;
+  margin-top: 42px;
+  margin-bottom: 82px;
 `
 
 export const SearchInput = styled.input`
