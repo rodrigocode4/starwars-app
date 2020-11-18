@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<App /> deve renderizar App 1`] = `
-<main>
-  <h1>
-    Hello World
-  </h1>
-</main>
-`;
