@@ -5,9 +5,12 @@ import Search from 'components/Search'
 import Home from 'components/Home'
 import Main from 'components/Main'
 import SearchItem from 'components/SearchItem'
-import { Gener } from 'Utils'
+import { Character } from 'Utils/context'
+type Props = {
+  characters?: Array<Character>
+}
 
-const Layout = () => {
+const Layout = ({ characters }: Props) => {
   return (
     <>
       <GlobalStyle />
@@ -16,12 +19,13 @@ const Layout = () => {
         <Search />
         <Main>
           <ol>
-            {[...Array<number>(15).keys()].map((e) => (
-              <li key={e}>
+            {characters?.map((character: Character) => (
+              <li key={character.url}>
                 <SearchItem
-                  name={'Luke Skywalker'}
-                  homeworld={'Tatooine'}
-                  gener={Gener.MALE}
+                  name={character.name}
+                  homeworld={character.homeworld}
+                  gender={character.gender || 'n/a'}
+                  url={character.url}
                 />
               </li>
             ))}

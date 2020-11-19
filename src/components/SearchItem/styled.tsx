@@ -14,7 +14,14 @@ export const WrapperLink = styled.div`
   height: 78px;
   border-bottom: 0.07rem solid #ffe81f;
   margin-left: 14px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    color: #ffe81f;
+  }
 `
+
+export const Link = styled.a``
 
 export const HeadingName = styled.h1`
   font-size: 20px;
@@ -24,6 +31,7 @@ export const HeadingName = styled.h1`
   text-align: left;
   color: #cacaca;
   letter-spacing: 1px;
+  width: max-content;
 `
 
 export const HeadingPlanet = styled.h2`
@@ -34,6 +42,7 @@ export const HeadingPlanet = styled.h2`
   text-align: left;
   color: #cacaca;
   letter-spacing: 1px;
+  width: max-content;
 `
 
 export const HeadingGener = styled.h3`
@@ -44,4 +53,5 @@ export const HeadingGener = styled.h3`
   text-align: left;
   color: #cacaca;
   letter-spacing: 1px;
+  width: max-content;
 `

@@ -29,7 +29,9 @@ export const SearchInput = styled.input`
   border-color: #ffe81f;
 `
 
-export const SearchBottom = styled.button`
+export const SearchBottom = styled.button.attrs({
+  type: 'submit'
+})`
   width: 58px;
   height: 58px;
   background: #000000;
