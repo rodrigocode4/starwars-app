@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import * as S from './styled'
-import { Character } from 'Utils/context'
+import { Character } from 'Utils/types'
 
 type Event = {
   preventDefault(): void

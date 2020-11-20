@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Layout from 'Layout'
 import { FunctionContext } from 'Utils/context'
-import type { Character } from 'Utils/context'
+import type { Character } from 'Utils/types'
 
 function App() {
   const [search, setSearch] = useState<string>('')

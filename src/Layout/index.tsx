@@ -5,7 +5,7 @@ import Search from 'components/Search'
 import Home from 'components/Home'
 import Main from 'components/Main'
 import SearchItem from 'components/SearchItem'
-import { Character } from 'Utils/context'
+import { Character } from 'Utils/types'
 type Props = {
   characters?: Array<Character>
 }

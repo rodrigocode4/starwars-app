@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import * as S from './styled'
 import { FunctionContext } from 'Utils/context'
-import type { Event } from 'Utils/context'
+import type { Event } from 'Utils/types'
 
 const Search = () => {
   const handleClick = useContext(FunctionContext)
