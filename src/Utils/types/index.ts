@@ -1,4 +1,4 @@
-type URL = string
+export type URL = string
 
 export interface Character {
   name: string

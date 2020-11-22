@@ -1,3 +1,5 @@
+import { URL } from 'Utils/types/index'
+
 export enum Gener {
   MALE = 'Male',
   FEMALE = 'Female',
@@ -27,4 +29,11 @@ export interface Character {
   created: string
   edited: string
   url: URL
+}
+
+export interface SearchResponseCharacter {
+  count: number
+  next: URL
+  previous: URL
+  results: Array<Character | undefined>
 }
