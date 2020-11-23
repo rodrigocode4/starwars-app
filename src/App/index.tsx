@@ -32,8 +32,12 @@ function App() {
   }, [search])
 
   function handleClick(searchText: string) {
+    const strClean = searchText.trim()
     setSearch('')
-    setSearch(searchText.trim())
+    setSearch(strClean)
+    if (strClean.length === 0) {
+      setState(undefined)
+    }
   }
 
   return (
