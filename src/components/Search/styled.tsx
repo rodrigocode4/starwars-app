@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Search as SearchIcon } from '@styled-icons/boxicons-regular/'
+import { Link } from 'react-router-dom'
 
 export const Form = styled.form`
   display: flex;
@@ -14,9 +15,15 @@ export const Form = styled.form`
   margin-top: 42px;
   margin-bottom: 82px;
 `
+export const InputWrapper = styled(Link).attrs({
+  to: '/'
+})`
+  text-decoration: none;
+  color: transparent;
+`
 
 export const SearchInput = styled.input`
-  width: 306px;
+  width: 260px;
   height: 58px;
   background: #000000;
   border-radius: 5px 0 0 5px;
