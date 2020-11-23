@@ -32,6 +32,7 @@ function App() {
   }, [search])
 
   function handleClick(searchText: string) {
+    setSearch('')
     setSearch(searchText.trim())
   }
 

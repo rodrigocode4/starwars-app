@@ -2,7 +2,6 @@ import React from 'react'
 import * as S from './styled'
 import { Character } from 'Utils/types'
 import SearchItem from 'components/SearchItem'
-
 type Props = {
   characters?: Array<Character>
 }

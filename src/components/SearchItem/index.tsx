@@ -19,12 +19,12 @@ const SerachItem = ({ name, homeworld, gender, url }: Character) => {
   }, [url])
 
   function handleClick2(e: Event) {
-    e.preventDefault()
     console.log(state)
   }
   return (
     <S.WrapperItem>
       <S.WrapperLink
+        to={`/people/${url[url.length - 2]}`}
         onClick={(e) => {
           handleClick2(e)
         }}

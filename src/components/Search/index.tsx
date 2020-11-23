@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import * as S from './styled'
 import { FunctionContext } from 'Utils/context'
 import type { Event } from 'Utils/types'
+import { Link } from 'react-router-dom'
 
 const Search = () => {
   const handleClick = useContext(FunctionContext)
@@ -24,7 +25,9 @@ const Search = () => {
         value={searchText}
       />
       <S.SearchBottom typeof="submit" onClick={(e) => handleClickSearch(e)}>
-        <S.SearchIconSVG />
+        <Link to="/">
+          <S.SearchIconSVG />
+        </Link>
       </S.SearchBottom>
     </S.Form>
   )

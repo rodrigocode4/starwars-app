@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { Link } from 'react-router-dom'
+
 export const WrapperItem = styled.div`
   width: 303px;
   height: 93px;
@@ -9,7 +11,7 @@ export const WrapperItem = styled.div`
   border-left: 0.3rem solid #ffe81f;
 `
 
-export const WrapperLink = styled.div`
+export const WrapperLink = styled(Link)`
   width: 192px;
   height: 78px;
   border-bottom: 0.07rem solid #ffe81f;
@@ -20,8 +22,6 @@ export const WrapperLink = styled.div`
     color: #ffe81f;
   }
 `
-
-export const Link = styled.a``
 
 export const HeadingName = styled.h1`
   font-size: 20px;
