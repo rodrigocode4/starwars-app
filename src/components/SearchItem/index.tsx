@@ -2,13 +2,8 @@ import React, { useState, useEffect } from 'react'
 import * as S from './styled'
 import { Character } from 'Utils/types'
 
-type Event = {
-  preventDefault(): void
-}
-
 const SerachItem = ({ name, homeworld, gender, url }: Character) => {
   const [state, setState] = useState()
-
   useEffect(() => {
     async function fetchCharacter() {
       const rs = await fetch(url)
@@ -18,15 +13,15 @@ const SerachItem = ({ name, homeworld, gender, url }: Character) => {
     fetchCharacter()
   }, [url])
 
-  function handleClick2(e: Event) {
-    console.log(state)
+  function handleClick2() {
+    console.log('state', state)
   }
   return (
     <S.WrapperItem>
       <S.WrapperLink
-        to={`/people/${url[url.length - 2]}`}
-        onClick={(e) => {
-          handleClick2(e)
+        to={`/${url.match(/\d+\//)?.[0]}`}
+        onClick={() => {
+          handleClick2()
         }}
       >
         <S.HeadingName>{name}</S.HeadingName>
