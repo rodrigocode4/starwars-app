@@ -32,6 +32,7 @@ const SerachItem = ({ name, homeworld, gender, url }: Character) => {
         <S.HeadingName>{name}</S.HeadingName>
         <S.HeadingPlanet>{homeworld}</S.HeadingPlanet>
         <S.HeadingGener>{gender}</S.HeadingGener>
+        <S.HR />
       </S.WrapperLink>
     </S.WrapperItem>
   )

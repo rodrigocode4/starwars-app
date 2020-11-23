@@ -15,7 +15,8 @@ export const WrapperLink = styled(Link)`
   width: 192px;
   height: 78px;
   border-bottom: 0.07rem solid #ffe81f;
-  margin-left: 14px;
+  text-decoration: underline;
+  color: transparent;
   cursor: pointer;
   &:hover {
     text-decoration: underline;
@@ -25,6 +26,7 @@ export const WrapperLink = styled(Link)`
 
 export const HeadingName = styled.h1`
   font-size: 20px;
+  margin-left: 10px;
   font-family: 'Mulish', sans-serif;
   font-weight: 700;
   line-height: 25px;
@@ -36,6 +38,7 @@ export const HeadingName = styled.h1`
 
 export const HeadingPlanet = styled.h2`
   font-size: 18px;
+  margin-left: 10px;
   font-family: 'Mulish', sans-serif;
   font-weight: 500;
   line-height: 25px;
@@ -47,6 +50,7 @@ export const HeadingPlanet = styled.h2`
 
 export const HeadingGener = styled.h3`
   font-size: 14px;
+  margin-left: 10px;
   font-family: 'Mulish', sans-serif;
   font-weight: 300;
   line-height: 15px;
@@ -54,4 +58,9 @@ export const HeadingGener = styled.h3`
   color: #cacaca;
   letter-spacing: 1px;
   width: max-content;
+`
+export const HR = styled.hr`
+  color: #ffe81f;
+  width: 200px;
+  margin: 10px 0 0 10px;
 `
