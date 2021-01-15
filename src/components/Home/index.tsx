@@ -3,7 +3,7 @@ import * as S from './styled'
 
 const Home = () => (
   <S.WrapperLatter>
-    <S.Latter>Star Wars</S.Latter>
+    <S.Latter>Star $ Wars</S.Latter>
   </S.WrapperLatter>
 )
 
