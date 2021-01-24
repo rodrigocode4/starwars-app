@@ -9,10 +9,10 @@ const Character = () => {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    fetchCharacter()
-  })
+    fetchCharacter(pathname)
+  }, [pathname])
 
-  async function fetchCharacter() {
+  async function fetchCharacter(pathname: string) {
     const rs = await fetch(`http://swapi.dev/api/people${pathname}`)
     const caracter: ICharacter = await rs.json()
 

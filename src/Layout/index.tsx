@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import * as S from './styled'
+import { BrowserRouter, Route } from 'react-router-dom'
+
+import { Character as ICharacter } from 'Utils/types'
 import GlobalStyle from 'Styles/global'
 import Search from 'components/Search'
 import Home from 'components/Home'
 import Main from 'components/Main'
 import ListCharacters from 'components/ListCharacters'
+import Character from 'components/Character'
 
-import { BrowserRouter, Route } from 'react-router-dom'
+const ListCharacters2 = lazy(() => import('components/ListCharacters'))
 
-import { Character } from 'Utils/types'
 type Props = {
-  characters?: Array<Character>
+  characters?: Array<ICharacter>
 }
 
 const Layout = ({ characters }: Props) => {
@@ -29,18 +32,17 @@ const Layout = ({ characters }: Props) => {
                   <Route
                     exact
                     path="/"
-                    render={() => <ListCharacters characters={characters} />}
+                    render={() => (
+                      <>
+                        <Suspense
+                          fallback={<h1 style={{ color: 'red' }}>Loading</h1>}
+                        >
+                          <ListCharacters2 characters={characters} />
+                        </Suspense>
+                      </>
+                    )}
                   />
-                  <Route
-                    path={`/:id`}
-                    component={() => {
-                      return (
-                        <h1 style={{ color: 'red' }}>
-                          <code>{JSON.stringify(characters)}</code>
-                        </h1>
-                      )
-                    }}
-                  />
+                  <Route path={`/:id`} component={Character} />
                 </Main>
               </>
             )}

@@ -1,5 +1,3 @@
-import { URL } from 'Utils/types/index'
-
 export enum Gener {
   MALE = 'Male',
   FEMALE = 'Female',
@@ -12,7 +10,8 @@ export type T = {
   gender: string
 }
 
-export interface Character {
+type URL = string
+export type ICharacter = {
   name: string
   height: number
   mass: number
@@ -31,9 +30,26 @@ export interface Character {
   url: URL
 }
 
+export type IPlanet = {
+  name: string
+  rotation_period: number
+  orbital_period: number
+  diameter: number
+  climate: string
+  gravity: string
+  terrain: string
+  surface_water: number
+  population: number
+  residents: string[]
+  films: string[]
+  created: string
+  edited: string
+  url: string
+}
+
 export interface SearchResponseCharacter {
   count: number
   next: URL
   previous: URL
-  results: Array<Character | undefined>
+  results: Array<ICharacter | undefined>
 }
