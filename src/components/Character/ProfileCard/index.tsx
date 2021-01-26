@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import * as S from './styled'
-import { ICharacter, IPlanet } from 'Utils/index'
+import { ICharacter, IPlanet } from 'Utils/types'
 import ItemProfile from '../ProfileCardItem'
 
 const Profile = () => {
