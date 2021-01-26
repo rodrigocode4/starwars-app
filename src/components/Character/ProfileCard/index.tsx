@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import * as S from './styled'
-import { ICharacter } from 'Utils/index'
+import { ICharacter, IPlanet } from 'Utils/index'
 import ItemProfile from '../ProfileCardItem'
 
-type Props = {
-  character?: ICharacter
-}
+const Profile = () => {
+  const [character, setCharacter] = useState<ICharacter>()
+  const { pathname } = useLocation()
 
-const Profile = ({ character }: Props) => {
+  useEffect(() => {
+    fetchCharacter(pathname)
+  }, [pathname])
+
+  async function fetchCharacter(pathname: string) {
+    const rs = await fetch(`http://swapi.dev/api/people${pathname}`)
+    const caracter: ICharacter = await rs.json()
+
+    const planetResult = await fetch(caracter.homeworld)
+    const { name: homeworld }: IPlanet = await planetResult.json()
+    caracter.homeworld = homeworld
+    setCharacter(caracter)
+  }
+
   const ProfileData = new Map<string, string | number | undefined>([
     ['Gender', character?.gender],
     ['Mass', character?.mass],
@@ -28,7 +42,6 @@ const Profile = ({ character }: Props) => {
               <ItemProfile keyLabel={element[0]} value={element[1]} />
             </S.LI>
           ))}
-          {}
         </S.UL>
       </S.WrapperCharacter>
     </>
