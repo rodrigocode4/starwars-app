@@ -1,27 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import React from 'react'
 import * as S from './styled'
-import { ICharacter, IPlanet } from 'Utils/types'
-import ItemProfile from '../ProfileCardItem'
+import { ICharacter } from 'Utils/types'
+import ProfileCardItem from '../ProfileCardItem'
 
-const Profile = () => {
-  const [character, setCharacter] = useState<ICharacter>()
-  const { pathname } = useLocation()
+type Props = {
+  character?: ICharacter
+}
 
-  useEffect(() => {
-    fetchCharacter(pathname)
-  }, [pathname])
-
-  async function fetchCharacter(pathname: string) {
-    const rs = await fetch(`http://swapi.dev/api/people${pathname}`)
-    const caracter: ICharacter = await rs.json()
-
-    const planetResult = await fetch(caracter.homeworld)
-    const { name: homeworld }: IPlanet = await planetResult.json()
-    caracter.homeworld = homeworld
-    setCharacter(caracter)
-  }
-
+const ProfileCard = ({ character }: Props) => {
   const ProfileData = new Map<string, string | number | undefined>([
     ['Gender', character?.gender],
     ['Mass', character?.mass],
@@ -34,18 +20,18 @@ const Profile = () => {
 
   return (
     <>
-      <S.WrapperCharacter>
+      <S.WrapperProfileCard>
         <S.SectionTitle>Profile</S.SectionTitle>
         <S.UL>
           {[...ProfileData].map((element) => (
             <S.LI key={element[0]}>
-              <ItemProfile keyLabel={element[0]} value={element[1]} />
+              <ProfileCardItem keyLabel={element[0]} value={element[1]} />
             </S.LI>
           ))}
         </S.UL>
-      </S.WrapperCharacter>
+      </S.WrapperProfileCard>
     </>
   )
 }
 
-export default Profile
+export default ProfileCard

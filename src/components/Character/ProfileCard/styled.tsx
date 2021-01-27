@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const WrapperCharacter = styled.section`
+export const WrapperProfileCard = styled.section`
   width: 169px;
   height: 269px;
   background: #3a3a3a;
