@@ -5,7 +5,7 @@ import { ICharacter, IPlanet } from 'Utils/types'
 import { useLocation } from 'react-router-dom'
 
 import ProfileCard from './ProfileCard'
-import VehiclesCard from './VehiclesCard'
+import LinkCard from './LinkCard'
 
 const Character = () => {
   const [character, setCharacter] = useState<ICharacter>()
@@ -26,10 +26,11 @@ const Character = () => {
   }
   return (
     <>
-      {console.log(character)}
       <S.CharacterWrapper>
         <ProfileCard character={character} />
-        {/* <VehiclesCard urlVehicles={character?.vehicles} /> */}
+        <LinkCard name="Vehicles" urlLink={character?.vehicles} />
+        <LinkCard name="Starships" urlLink={character?.starships} />
+        <LinkCard name="Films" urlLink={character?.films} />
       </S.CharacterWrapper>
     </>
   )
