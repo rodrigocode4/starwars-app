@@ -9,5 +9,4 @@ export const LayoutWrapper = styled.section`
   align-items: center;
   background: radial-gradient(#4d4d4d, #290c2d);
   font-family: 'Mulish', sans-serif;
-  position: fixed;
 `

@@ -20,7 +20,7 @@ export const Name = styled.h2`
   color: #cacaca;
   padding: 7px 0 7px 0;
   transition: 0.5s ease-out;
-  background: linear-gradient(to left, #3a3a3a 50%, yellow 50%) right;
+  background: linear-gradient(to left, transparent 50%, yellow 50%) right;
   background-size: 250%;
   &:hover {
     background-position: left;

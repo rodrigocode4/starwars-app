@@ -27,7 +27,7 @@ const Layout = ({ characters }: Props) => {
             <Switch>
               <Route exact path="/">
                 <Suspense fallback={<h1 style={{ color: 'red' }}>Loading</h1>}>
-                  {characters === undefined ? null : (
+                  {characters !== undefined && (
                     <ListCharacters characters={characters} />
                   )}
                 </Suspense>

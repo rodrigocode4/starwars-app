@@ -6,7 +6,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: row;
   background-color: #000000;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 5px;
   border-width: 0px;
   border-style: none;

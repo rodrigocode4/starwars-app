@@ -6,5 +6,8 @@ export const CharacterWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  margin-top: 69px;
+  width: 757px;
+  height: 377px;
+  background: #3a3a3a;
+  border-radius: 5px;
 `

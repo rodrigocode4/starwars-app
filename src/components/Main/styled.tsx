@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+type PropStyle = {
+  isCharacterIfo: boolean
+}
+
 export const LayoutMain = styled.main`
   width: 799px;
   height: 421px;
@@ -7,11 +11,14 @@ export const LayoutMain = styled.main`
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: ${({ isCharacterIfo }: PropStyle) =>
+    isCharacterIfo ? 'center' : 'flex-start'};
   align-items: center;
   overflow-x: hidden;
-  overflow-y: scroll;
-  margin-left: 10px;
+  overflow-y: ${({ isCharacterIfo }: PropStyle) =>
+    isCharacterIfo ? 'hidden' : 'scroll'};
+  margin-left: ${({ isCharacterIfo }: PropStyle) =>
+    isCharacterIfo ? '0' : '10px'};
   &::-webkit-scrollbar-thumb {
     background: #ffe81f;
     border-radius: 15px;
