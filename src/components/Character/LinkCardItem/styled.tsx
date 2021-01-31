@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 export const WrapperLink = styled.div`
   color: #cacaca;
@@ -34,6 +33,10 @@ export const HR = styled.hr`
   border: 0.5px solid yellow;
   background: yellow;
 `
-export const WarapperName = styled(Link)`
+
+export const WarapperName = styled.div`
   text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
 `
