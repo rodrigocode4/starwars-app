@@ -8,6 +8,7 @@ import Search from 'components/Search'
 import Home from 'components/Home'
 import Main from 'components/Main'
 import Character from 'components/Character'
+import Modal from 'components/Modal'
 
 const ListCharacters = lazy(() => import('components/ListCharacters'))
 
@@ -21,6 +22,7 @@ const Layout = ({ characters }: Props) => {
       <GlobalStyle />
       <S.LayoutWrapper>
         <BrowserRouter>
+          {/*  <Modal /> */}
           <Home />
           <Search />
           <Main>
