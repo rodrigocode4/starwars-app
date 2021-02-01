@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Layout from 'Layout'
-import { FunctionContext } from 'Utils/context'
+import { FunctionContext, StartshipPrivider } from 'Utils/context'
 import type { Character } from 'Utils/types'
 
 function App() {
@@ -8,8 +8,12 @@ function App() {
   const [state, setState] = useState<Character[]>()
 
   useEffect(() => {
-    getData(search)
-  }, [search])
+    if (state !== undefined) {
+      return
+    } else {
+      getData(search)
+    }
+  }, [search, state])
 
   async function getData(search: string) {
     if (search !== '') {
@@ -43,7 +47,9 @@ function App() {
   return (
     <>
       <FunctionContext.Provider value={handleClick}>
-        <Layout characters={state} />
+        <StartshipPrivider>
+          <Layout characters={state} />
+        </StartshipPrivider>
       </FunctionContext.Provider>
     </>
   )

@@ -12,8 +12,12 @@ const Character = () => {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    fetchCharacter(pathname)
-  }, [pathname])
+    if (character !== undefined) {
+      return
+    } else {
+      fetchCharacter(pathname)
+    }
+  }, [pathname, character])
 
   async function fetchCharacter(pathname: string) {
     const rs = await fetch(`http://swapi.dev/api/people${pathname}`)

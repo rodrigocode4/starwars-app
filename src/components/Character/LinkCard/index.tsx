@@ -13,8 +13,12 @@ const LinkCard = ({ urlLink, name }: Props) => {
   const [link, setLink] = useState<Map<string, URL>>()
 
   useEffect(() => {
-    fetchLink(urlLink)
-  })
+    if (link !== undefined) {
+      return
+    } else {
+      fetchLink(urlLink)
+    }
+  }, [urlLink, link])
 
   async function fetchLink(urlLink: Array<URL> | undefined) {
     if (urlLink === undefined) {

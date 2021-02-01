@@ -61,3 +61,43 @@ export interface Character {
   homeworld: URL
   url: URL
 }
+
+export type IVehicle = {
+  name: string
+  model: string
+  manufacturer: string
+  cost_in_credits: number
+  length: number
+  max_atmosphering_speed: number
+  crew: number
+  passengers: number
+  cargo_capacity: number
+  consumables: string
+  vehicle_class: string
+  pilots: Array<unknown | undefined>
+  films: Array<string | undefined>
+  created: string
+  edited: string
+  url: string
+}
+
+export type IStarship = {
+  name: string
+  model: string
+  manufacturer: string
+  cost_in_credits: string
+  length: string
+  max_atmosphering_speed: string
+  crew: string
+  passengers: string
+  cargo_capacity: string
+  consumables: string
+  hyperdrive_rating: string
+  MGLT: string
+  starship_class: string
+  pilots: Array<unknown>
+  films: Array<string>
+  created: string
+  edited: string
+  url: string
+}

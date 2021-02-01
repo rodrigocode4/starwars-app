@@ -3,7 +3,7 @@ import * as S from './styled'
 
 type Props = {
   keyLabel: string
-  value: string | number
+  value: string | number | undefined
 }
 
 const CardItem = ({ keyLabel, value }: Props) => {

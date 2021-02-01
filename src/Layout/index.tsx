@@ -9,6 +9,7 @@ import Home from 'components/Home'
 import Main from 'components/Main'
 import Character from 'components/Character'
 import Modal from 'components/Modal'
+import { useTransport } from 'Utils/context'
 
 const ListCharacters = lazy(() => import('components/ListCharacters'))
 
@@ -17,12 +18,13 @@ type Props = {
 }
 
 const Layout = ({ characters }: Props) => {
+  const { modalVisible } = useTransport()
   return (
     <>
       <GlobalStyle />
       <S.LayoutWrapper>
         <BrowserRouter>
-          <Modal />
+          {modalVisible && <Modal />}
           <Home />
           <Search />
           <Main>
