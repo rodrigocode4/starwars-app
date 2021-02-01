@@ -19,7 +19,7 @@ const Vehicle = ({param}: Props) => {
     } else {
       fetchVehicle(param)
     }
-  }, [param, vehicle])
+  })
 
   async function fetchVehicle(param: string) {
     const rs = await fetch(`https://swapi.dev/api${param}`)

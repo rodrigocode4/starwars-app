@@ -18,7 +18,7 @@ const LinkCard = ({ urlLink, name }: Props) => {
     } else {
       fetchLink(urlLink)
     }
-  }, [urlLink, link])
+  })
 
   async function fetchLink(urlLink: Array<URL> | undefined) {
     if (urlLink === undefined) {

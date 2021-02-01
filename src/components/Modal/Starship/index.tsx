@@ -19,7 +19,7 @@ const Startship = ({ param }: Props) => {
     } else {
       fetchStarship(param)
     }
-  }, [param, starship])
+  })
 
   async function fetchStarship(param: string) {
     const rs = await fetch(`https://swapi.dev/api${param}`)
