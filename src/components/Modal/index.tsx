@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as S from './styled'
 
-type Node = {
-  children?: React.ReactNode
-}
+import Vehicle from './Vehicle'
+import Starship from './Starship'
 
-const Modal = ({ children }: Node) => {
+const Modal = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(true)
+
   return (
-    <S.WrapperModal>
+    <S.WrapperModal style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
       <S.BoxModal>
         <S.Head>
-          <S.TitleName>Snowspeeder</S.TitleName>
-          <S.CloseButtom>
+          <S.TitleName>{'vehicle.name'}</S.TitleName>
+          <S.CloseButtom onClick={() => setIsVisible(false)}>
             <S.CloseIcon />
           </S.CloseButtom>
         </S.Head>
-
-        {children}
+        <S.Body>
+          {/* <Vehicle /> */}
+          <Starship />
+        </S.Body>
       </S.BoxModal>
     </S.WrapperModal>
   )

@@ -22,7 +22,7 @@ const Layout = ({ characters }: Props) => {
       <GlobalStyle />
       <S.LayoutWrapper>
         <BrowserRouter>
-          {/*  <Modal /> */}
+          <Modal />
           <Home />
           <Search />
           <Main>
