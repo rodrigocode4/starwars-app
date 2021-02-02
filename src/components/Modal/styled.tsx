@@ -10,13 +10,15 @@ export const WrapperModal = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  visibility: ${({ isVisible }: { isVisible: boolean }) =>
+    isVisible ? 'visible' : 'hidden'};
 `
 
 export const BoxModal = styled.div`
   position: absolute;
   backdrop-filter: blur(6px);
   width: 580px;
-  height: 511px;
+  height: ${({ isFilm }: { isFilm: boolean }) => (isFilm ? 'auto' : '511px')};
   background: #000;
   border-radius: 8px;
   border-left: 8px solid #ffe81f;
