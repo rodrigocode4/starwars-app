@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+export const WrapperProfile = styled.div``
+
 export const WrapperProfileCard = styled.section`
   width: 169px;
   height: auto;
@@ -12,12 +14,12 @@ export const WrapperProfileCard = styled.section`
   margin: 0;
   padding-bottom: 20px;
 `
+
 export const SectionTitle = styled.h2`
   color: #cacaca;
   margin: 0 0 7px 7px;
   font-size: 14px;
 `
-export const WrapperProfile = styled.div``
 
 export const UL = styled.ul``
 

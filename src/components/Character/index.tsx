@@ -31,10 +31,17 @@ const Character = () => {
   return (
     <>
       <S.CharacterWrapper>
-        <ProfileCard character={character} />
-        <LinkCard name="Vehicles" urlLink={character?.vehicles} />
-        <LinkCard name="Starships" urlLink={character?.starships} />
-        <LinkCard name="Films" urlLink={character?.films} />
+        <S.WrapperNameCharacter>
+          <S.NameCharacter>{character?.name}</S.NameCharacter>
+        </S.WrapperNameCharacter>
+        <S.WrapperCards>
+          <ProfileCard character={character} />
+          <S.WrapperLinkCards>
+            <LinkCard name="Vehicles" urlLink={character?.vehicles} />
+            <LinkCard name="Starships" urlLink={character?.starships} />
+          </S.WrapperLinkCards>
+          <LinkCard name="Films" urlLink={character?.films} />
+        </S.WrapperCards>
       </S.CharacterWrapper>
     </>
   )

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+export const WrapperLink = styled.div``
+
 export const WrapperLinkCards = styled.section`
   width: 169px;
   height: auto;
@@ -12,13 +14,12 @@ export const WrapperLinkCards = styled.section`
   margin: 0;
   padding-bottom: 5px;
 `
+
 export const SectionTitle = styled.h2`
   color: #cacaca;
   margin: 0 0 7px 7px;
   font-size: 14px;
 `
-
-export const WrapperLink = styled.div``
 
 export const UL = styled.ul``
 
