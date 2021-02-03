@@ -44,8 +44,12 @@ export const Sinopse = ({ keyLabel, value }: PropsSinopseType) => (
       {keyLabel}
     </Label>
     <BR />
-    <Strong title={String(value)} itemID={keyLabel}>
-      {value}
+    <Strong title={String(value || '')} itemID={keyLabel}>
+      {[...String(value || '').split('\n\r')].map((paragrapher, index) => (
+        <>
+          <p key={index}>{paragrapher}</p>
+        </>
+      ))}
     </Strong>
   </WrapperItem>
 )
@@ -62,11 +66,19 @@ export const Character = ({ keyLabel, values }: PropsCharacterType) => (
       {keyLabel}
     </Label>
     <BR />
-    {values.map((value) => (
-      <Strong key={value} title={String(value)} itemID={keyLabel}>
-        {value}
-      </Strong>
-    ))}
+    {console.log(values)}
+    {values
+      .join(', .')
+      .split('.')
+      .map((value, index) => (
+        <Strong
+          key={index}
+          title={String(value).replace(', ', '')}
+          itemID={keyLabel}
+        >
+          {value}
+        </Strong>
+      ))}
   </WrapperItem>
 )
 

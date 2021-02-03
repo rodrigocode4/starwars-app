@@ -19,9 +19,9 @@ const ProfileCard = ({ character }: Props) => {
   ])
 
   return (
-    <>
+    <S.WrapperProfile>
+      <S.SectionTitle>Profile</S.SectionTitle>
       <S.WrapperProfileCard>
-        <S.SectionTitle>Profile</S.SectionTitle>
         <S.UL>
           {[...ProfileData].map((element) => (
             <S.LI key={element[0]}>
@@ -30,7 +30,7 @@ const ProfileCard = ({ character }: Props) => {
           ))}
         </S.UL>
       </S.WrapperProfileCard>
-    </>
+    </S.WrapperProfile>
   )
 }
 

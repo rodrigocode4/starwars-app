@@ -4,7 +4,7 @@ export const WrapperLink = styled.div`
   color: #cacaca;
   width: 122px;
   height: 33px;
-  margin-top: 5px;
+  margin: 5px 0 10px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

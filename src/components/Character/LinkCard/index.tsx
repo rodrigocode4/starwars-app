@@ -38,18 +38,20 @@ const LinkCard = ({ urlLink, name }: Props) => {
     setLink(linkNameAndUrl)
   }
   return (
-    <S.WrapperLinkCards>
+    <S.WrapperLink>
       <S.SectionTitle>{name}</S.SectionTitle>
-      <S.UL>
-        {link !== undefined
-          ? [...link].map((element, index) => (
-              <S.LI key={index}>
-                <LinkCardItem name={element[0]} valueUrl={element[1]} />
-              </S.LI>
-            ))
-          : null}
-      </S.UL>
-    </S.WrapperLinkCards>
+      <S.WrapperLinkCards>
+        <S.UL>
+          {link !== undefined
+            ? [...link].map((element, index) => (
+                <S.LI key={index}>
+                  <LinkCardItem name={element[0]} valueUrl={element[1]} />
+                </S.LI>
+              ))
+            : null}
+        </S.UL>
+      </S.WrapperLinkCards>
+    </S.WrapperLink>
   )
 }
 
