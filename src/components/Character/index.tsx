@@ -20,7 +20,7 @@ const Character = () => {
   }, [pathname, character])
 
   async function fetchCharacter(pathname: string) {
-    const rs = await fetch(`http://swapi.dev/api/people${pathname}`)
+    const rs = await fetch(`https://swapi.dev/api/people${pathname}`)
     const caracter: ICharacter = await rs.json()
 
     const planetResult = await fetch(caracter.homeworld)
