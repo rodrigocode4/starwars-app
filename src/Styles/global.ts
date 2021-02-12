@@ -57,10 +57,10 @@ const GlobalStyle = createGlobalStyle`
       font-family: "Star Jedi";
       src: url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.eot"); /* IE9*/
       src: url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-           url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.woff2") format("woff2"), /* chrome firefox */
-           url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.woff") format("woff"), /* chrome firefox */
-           url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
-           url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.svg#Star%20Jedi") format("svg"); /* iOS 4.1- */
+      url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.woff2") format("woff2"), /* chrome firefox */
+      url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.woff") format("woff"), /* chrome firefox */
+      url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+      url("https://db.onlinewebfonts.com/t/0c724f6aa457310440cf8949c615cbd7.svg#Star%20Jedi") format("svg"); /* iOS 4.1- */
 }
     background: #282c35;
     line-height: 1;
