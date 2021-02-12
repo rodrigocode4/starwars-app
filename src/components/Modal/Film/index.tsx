@@ -32,7 +32,7 @@ const Film = ({ param }: Props) => {
 
   async function fetchCharacters(listUrlCharacters: Array<string>) {
     const requests: Array<Promise<ICharacter>> = listUrlCharacters.map((url) =>
-      fetch(url).then((rs) => rs.json())
+      fetch(url.replace(/^http/, 'https')).then((rs) => rs.json())
     )
     const rs = (await Promise.all(requests)) as Array<ICharacter>
     const names: Array<string> = rs.map(({ name }) => name)
