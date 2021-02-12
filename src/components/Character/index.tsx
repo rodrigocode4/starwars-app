@@ -23,7 +23,9 @@ const Character = () => {
     const rs = await fetch(`https://swapi.dev/api/people${pathname}`)
     const caracter: ICharacter = await rs.json()
 
-    const planetResult = await fetch(caracter.homeworld)
+    const planetResult = await fetch(
+      caracter.homeworld.replace(/^http/, 'https')
+    )
     const { name: homeworld }: IPlanet = await planetResult.json()
     caracter.homeworld = homeworld
     setCharacter(caracter)

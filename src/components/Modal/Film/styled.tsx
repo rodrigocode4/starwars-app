@@ -66,7 +66,6 @@ export const Character = ({ keyLabel, values }: PropsCharacterType) => (
       {keyLabel}
     </Label>
     <BR />
-    {console.log(values)}
     {values
       .join(', .')
       .split('.')

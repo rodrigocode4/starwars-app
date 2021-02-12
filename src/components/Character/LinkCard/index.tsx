@@ -26,7 +26,7 @@ const LinkCard = ({ urlLink, name }: Props) => {
     }
     const linkNameAndUrl: Map<string, URL> = new Map()
     for await (const link of urlLink) {
-      const rs = await fetch(link)
+      const rs = await fetch(link.replace(/^http/, 'https'))
       if (name !== 'Films') {
         const { name } = await rs.json()
         linkNameAndUrl.set(name, link)

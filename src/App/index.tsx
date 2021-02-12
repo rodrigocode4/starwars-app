@@ -22,11 +22,11 @@ function App() {
 
       const data: Array<Character> = []
       for await (const { name, homeworld, gender, url } of results) {
-        const rs = await fetch(homeworld)
+        const rs = await fetch(homeworld.replace(/^http/, 'https'))
         const { name: planet } = await rs.json()
         const dataFiltered: Character = {
           name,
-          homeworld: planet,
+          homeworld: planet.replace(/^http/, 'https'),
           gender,
           url
         }
