@@ -44,13 +44,14 @@ export const Sinopse = ({ keyLabel, value }: PropsSinopseType) => (
       {keyLabel}
     </Label>
     <BR />
-    <Strong title={String(value || '')} itemID={keyLabel}>
-      {[...String(value || '').split('\n\r')].map((paragrapher, index) => (
-        <>
-          <p key={index}>{paragrapher}</p>
-        </>
-      ))}
-    </Strong>
+    {[...String(value || '').split('\n\r')].map((paragrapher, index) => (
+      <>
+        <Strong key={index} title={paragrapher} itemID={keyLabel}>
+          {paragrapher}
+        </Strong>
+        <BR />
+      </>
+    ))}
   </WrapperItem>
 )
 
