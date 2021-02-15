@@ -10,17 +10,17 @@ import LinkCard from './LinkCard'
 const Character = () => {
   const [character, setCharacter] = useState<ICharacter>()
   const { pathname } = useLocation()
-
+  const numberOfPeople = pathname.replace(/^\//, '')
   useEffect(() => {
     if (character !== undefined) {
       return
     } else {
-      fetchCharacter(pathname)
+      fetchCharacter(numberOfPeople)
     }
-  }, [pathname, character])
+  }, [numberOfPeople, character])
 
-  async function fetchCharacter(pathname: string) {
-    const rs = await fetch(`https://swapi.dev/api/people${pathname}`)
+  async function fetchCharacter(numberOfPeople: string) {
+    const rs = await fetch(`https://swapi.dev/api/people/${numberOfPeople}`)
     const caracter: ICharacter = await rs.json()
 
     const planetResult = await fetch(

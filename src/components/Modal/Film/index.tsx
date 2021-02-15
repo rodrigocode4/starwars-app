@@ -18,12 +18,13 @@ const Film = ({ param }: Props) => {
     if (film !== undefined) {
       return
     } else {
-      fetchFilm(param)
+      const filmParam = param.replace(/^\//, '')
+      fetchFilm(filmParam)
     }
   })
 
-  async function fetchFilm(param: string) {
-    const rs = await fetch(`https://swapi.dev/api${param}`)
+  async function fetchFilm(filmParam: string) {
+    const rs = await fetch(`https://swapi.dev/api/${filmParam}`)
     const film = (await rs.json()) as IFilm
     setFilm(film)
     setName(film.title)
