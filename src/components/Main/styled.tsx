@@ -1,12 +1,13 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 type PropStyle = {
   isCharacterIfo: boolean
 }
 
 export const LayoutMain = styled.main`
-  width: 799px;
-  height: 421px;
+  width: 50vw;
+  height: 60vh;
   background: #000000;
   border-radius: 8px;
   display: flex;
@@ -34,4 +35,23 @@ export const LayoutMain = styled.main`
     height: 1px;
     width: 5px;
   }
+
+  ${media.between('medium', 'huge')`
+    width: 70vw;
+    height: 60vh;
+  `}
+
+  ${media.between('small', 'medium')`
+    width: 90vw;
+    height: 70vh;
+    margin-left: 0;
+    margin-bottom: 3vh;
+  `}
+
+  ${media.lessThan('small')`
+    width: 90vw;
+    height: 66vh;
+    margin-left: 0;
+    margin-bottom: 3vh;
+  `}
 `

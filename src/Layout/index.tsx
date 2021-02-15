@@ -9,6 +9,7 @@ import Home from 'components/Home'
 import Main from 'components/Main'
 import Character from 'components/Character'
 import Modal from 'components/Modal'
+import Header from 'components/Header'
 import { useTransport } from 'Utils/context'
 
 const ListCharacters = lazy(() => import('components/ListCharacters'))
@@ -25,8 +26,10 @@ const Layout = ({ characters }: Props) => {
       <S.LayoutWrapper>
         <BrowserRouter>
           {modalVisible && <Modal />}
-          <Home />
-          <Search />
+          <Header>
+            <Home />
+            <Search />
+          </Header>
           <Main>
             <Switch>
               <Route exact path="/">
