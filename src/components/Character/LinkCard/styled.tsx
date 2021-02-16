@@ -1,9 +1,17 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
-export const WrapperLink = styled.div``
+export const WrapperLink = styled.div`
+  ${media.lessThan('medium')`
+    margin: 0.5rem 0 0.5rem 0;
+  `}
+  ${media.between('medium', 'large')`
+    margin: 0.5rem 0 0.5rem 0;
+  `}
+`
 
 export const WrapperLinkCards = styled.section`
-  width: 169px;
+  width: 200px;
   height: auto;
   background: #2d2d2d;
   border-radius: 5px;
@@ -17,8 +25,8 @@ export const WrapperLinkCards = styled.section`
 
 export const SectionTitle = styled.h2`
   color: #cacaca;
-  margin: 0 0 7px 7px;
-  font-size: 14px;
+  font-size: 18px;
+  display: inline;
 `
 
 export const UL = styled.ul``

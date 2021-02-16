@@ -11,7 +11,6 @@ const ItemProfile = ({ keyLabel, value }: Props) => {
     <>
       <S.WrapperItemProfile>
         <S.Label htmlFor={keyLabel}>{keyLabel}</S.Label>
-        <S.BR />
         <S.Strong itemID={keyLabel}>{value}</S.Strong>
         <S.HR />
       </S.WrapperItemProfile>
