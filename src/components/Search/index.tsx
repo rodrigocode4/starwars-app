@@ -1,54 +1,33 @@
-import React, { useContext, useState } from 'react'
+import React, { useState, MouseEvent } from 'react'
 import * as S from './styled'
-import { FunctionContext } from 'Utils/context'
-import type { Event } from 'Utils/types'
-import { Link } from 'react-router-dom'
-
-type KeyboardEvent = React.KeyboardEvent<HTMLInputElement>
+import { useHistory } from 'react-router-dom'
+import { useSearch } from 'Utils/search.context'
 
 const Search = () => {
-  const handleClick = useContext(FunctionContext)
-  const [searchText, setSearchText] = useState<string>('')
+  const { setSearch } = useSearch()
+  const [value, setValue] = useState('')
+  const history = useHistory()
 
-  function handleChange(e: Event) {
-    setSearchText(e.target.value)
-  }
-
-  function handleClickSearch(e: React.MouseEvent<HTMLButtonElement>) {
+  function handleClick(e: MouseEvent<HTMLButtonElement>) {
     e.preventDefault()
-    handleClick(searchText)
-  }
-
-  function handleInputSearch(e: KeyboardEvent) {
-    if (e.key == 'Enter') {
-      handleClick(searchText)
-    }
+    setSearch(value)
+    history.push('/')
   }
 
   return (
-    <S.Form>
-      <S.InputWrapper
-        onClick={(e) => {
-          if (searchText.length > 0) {
-            e.preventDefault()
-          }
-          handleClick(searchText)
-        }}
-      >
+    <>
+      <S.Form>
         <S.SearchInput
+          autoFocus
+          type="text"
           placeholder="Buscar personagem..."
-          onKeyPress={(e) => handleInputSearch(e)}
-          onChange={(e) => handleChange(e)}
-          value={searchText}
+          onChange={(e) => setValue(e.target.value)}
         />
-      </S.InputWrapper>
-
-      <S.SearchBottom typeof="submit" onClick={(e) => handleClickSearch(e)}>
-        <Link to="/">
+        <S.SearchBottom onClick={handleClick}>
           <S.SearchIconSVG />
-        </Link>
-      </S.SearchBottom>
-    </S.Form>
+        </S.SearchBottom>
+      </S.Form>
+    </>
   )
 }
 

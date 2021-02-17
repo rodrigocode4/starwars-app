@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import { Search as SearchIcon } from '@styled-icons/boxicons-regular/'
-import { Link } from 'react-router-dom'
 import media from 'styled-media-query'
 
 export const Form = styled.form`
@@ -24,18 +23,6 @@ export const Form = styled.form`
     width: 14.5rem;
   `}
 `
-export const InputWrapper = styled(Link).attrs({
-  to: '/'
-})`
-  text-decoration: none;
-  color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 80%;
-  height: 100%;
-`
-
 export const SearchInput = styled.input`
   height: inherit;
   background: #000000;
@@ -45,8 +32,9 @@ export const SearchInput = styled.input`
   font-size: 1rem;
   text-indent: 2rem;
   border-style: none;
-  outline: #ffe81f;
   border-color: #ffe81f;
+  width: 90%;
+  outline: none;
 
   ${media.between('small', 'medium')`
     text-indent: 1.5rem;
@@ -54,7 +42,7 @@ export const SearchInput = styled.input`
 
   ${media.lessThan('small')`
     text-indent: 0.5rem;
-  `}
+  `};
 `
 
 export const SearchBottom = styled.button.attrs({
@@ -70,6 +58,7 @@ export const SearchBottom = styled.button.attrs({
   border-style: none;
   outline: #ffe81f;
   border-color: #ffe81f;
+  border-left: 1px solid #807307;
   &:hover {
     cursor: pointer;
   }

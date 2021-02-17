@@ -1,18 +1,4 @@
 import React, { useState, useContext, createContext } from 'react'
-import { Character } from 'Utils/types'
-
-export const FunctionContext = React.createContext(Function())
-
-export const data: Array<Character> = [
-  {
-    name: '',
-    gender: '',
-    homeworld: '',
-    url: ''
-  }
-]
-
-export const CharacterContext = React.createContext(data)
 
 type TransportContextType = {
   param: string
@@ -38,11 +24,9 @@ const TransportContext = createContext<TransportContextType>({
   }
 })
 
-type Props = {
+export const TransportPrivider: React.FC<{
   children: React.ReactNode
-}
-
-export const TransportPrivider = ({ children }: Props) => {
+}> = ({ children }) => {
   const [param, setParam] = useState<string>('')
   const [modalVisible, setModalVisible] = useState<boolean>(false)
   const [name, setName] = useState<string>('')
