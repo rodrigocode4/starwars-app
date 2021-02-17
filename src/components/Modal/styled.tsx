@@ -5,8 +5,8 @@ import media from 'styled-media-query'
 export const WrapperModal = styled.div`
   position: absolute;
   backdrop-filter: blur(6px);
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: #66585885;
   display: flex;
   align-items: center;
