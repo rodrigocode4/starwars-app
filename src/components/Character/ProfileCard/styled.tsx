@@ -9,7 +9,7 @@ export const WrapperProfile = styled.div`
 
 export const WrapperProfileCard = styled.section`
   width: 200px;
-  height: 328px;
+  height: auto;
   background: #2d2d2d;
   border-radius: 5px;
   margin-top: 20px;
@@ -23,7 +23,7 @@ export const WrapperProfileCard = styled.section`
 export const SectionTitle = styled.h2`
   color: #cacaca;
   margin: 0 0 7px 7px;
-  font-size: 18px;
+  font-size: 1.125rem;
 `
 
 export const UL = styled.ul``

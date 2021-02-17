@@ -54,4 +54,11 @@ export const LayoutMain = styled.main`
     margin-left: 0;
     margin-bottom: 3vh;
   `}
+
+  ${media.greaterThan('huge')`
+    width: 55vw;
+    height: 55vh;
+    margin-left: 0;
+    margin-bottom: 3vh;
+  `}
 `

@@ -26,14 +26,15 @@ export const CharacterWrapper = styled.div`
   `}
 `
 
-export const WrapperNameCharacter = styled.div`
-  margin: 1rem 0 1rem 0;
-`
+export const WrapperNameCharacter = styled.div``
 
 export const NameCharacter = styled.h1`
-  font-size: 28px;
+  font-size: 1.7rem;
   color: #cacaca;
   font-weight: bold;
+  ${media.greaterThan('huge')`
+    font-size: 2.2rem;
+  `}
 `
 
 export const WrapperCards = styled.div`

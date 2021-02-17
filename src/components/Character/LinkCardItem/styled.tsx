@@ -1,19 +1,23 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const WrapperLink = styled.div`
   color: #cacaca;
   width: 80%;
-  height: 33px;
-  margin: 5px 0 5px 16px;
+  height: auto;
+  margin: 0.3125rem 0 0.875rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `
 
 export const Name = styled.h2`
-  font-size: 18px;
+  font-size: 1rem;
   color: #cacaca;
   display: inline;
+  ${media.greaterThan('huge')`
+    font-size: 1.2rem;
+  `}
 `
 
 export const HR = styled.hr`
@@ -26,6 +30,7 @@ export const HR = styled.hr`
 `
 
 export const WarapperName = styled.div`
+  margin-top: 0.3rem;
   text-decoration: none;
   overflow: hidden;
   white-space: nowrap;
@@ -40,4 +45,8 @@ export const WarapperName = styled.div`
       color: #3a3a3a;
     }
   }
+
+  ${media.greaterThan('huge')`
+    margin-top: 0.4rem;
+  `}
 `

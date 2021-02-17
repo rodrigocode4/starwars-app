@@ -21,6 +21,9 @@ export const WrapperLinkCards = styled.section`
   border-left: 7px solid #ffe81f;
   margin: 0;
   padding-bottom: 5px;
+  ${media.greaterThan('huge')`
+    padding-bottom: 2px;
+  `}
 `
 
 export const SectionTitle = styled.h2`
