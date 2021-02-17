@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Layout from 'Layout'
-import { FunctionContext, StartshipPrivider } from 'Utils/context'
+import { FunctionContext, TransportPrivider } from 'Utils/context'
 import type { Character } from 'Utils/types'
 
 function App() {
@@ -47,9 +47,9 @@ function App() {
   return (
     <>
       <FunctionContext.Provider value={handleClick}>
-        <StartshipPrivider>
+        <TransportPrivider>
           <Layout characters={state} />
-        </StartshipPrivider>
+        </TransportPrivider>
       </FunctionContext.Provider>
     </>
   )

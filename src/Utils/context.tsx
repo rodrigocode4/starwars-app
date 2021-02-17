@@ -42,7 +42,7 @@ type Props = {
   children: React.ReactNode
 }
 
-export const StartshipPrivider = ({ children }: Props) => {
+export const TransportPrivider = ({ children }: Props) => {
   const [param, setParam] = useState<string>('')
   const [modalVisible, setModalVisible] = useState<boolean>(false)
   const [name, setName] = useState<string>('')
