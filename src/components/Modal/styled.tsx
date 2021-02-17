@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Close } from '@styled-icons/ionicons-solid/Close'
+import media from 'styled-media-query'
 
 export const WrapperModal = styled.div`
   position: absolute;
@@ -12,6 +13,10 @@ export const WrapperModal = styled.div`
   justify-content: center;
   visibility: ${({ isVisible }: { isVisible: boolean }) =>
     isVisible ? 'visible' : 'hidden'};
+  overflow: hidden;
+  ${media.lessThan('small')`
+    overflow-y: auto;
+  `}
 `
 
 export const BoxModal = styled.div`
@@ -22,6 +27,11 @@ export const BoxModal = styled.div`
   background: #000;
   border-radius: 8px;
   border-left: 8px solid #ffe81f;
+
+  ${media.lessThan('small')`
+    width: 90%;
+    height: 90%;
+  `}
 `
 
 export const CloseButtom = styled.button`
@@ -50,24 +60,36 @@ export const CloseIcon = styled(Close)`
 `
 
 export const TitleName = styled.h1`
-  margin: 21px 0 0 77px;
-  font-size: 36px;
+  font-size: 45px;
   font-weight: 700;
   color: #cacaca;
   letter-spacing: 1px;
+  width: 70%;
+  padding: 22px 0 10px 0;
+  ${media.lessThan('small')`
+    font-size: 26px;
+  `}
 `
 
 export const Head = styled.header`
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  height: 20%;
+  align-items: center;
+  justify-content: space-around;
+  height: 15%;
+  min-height: 75px;
 `
 
 export const Body = styled.main`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-left: 90px;
+  align-items: center;
   height: 80%;
+  ${media.lessThan('small')`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-y: scroll;
+  `}
 `

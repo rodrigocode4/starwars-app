@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const WrapperItem = styled.div`
   padding: 10px 0 10px 0;
-  width: 440px;
+  width: 80%;
   overflow: hidden;
   color: #cacaca;
 `
@@ -86,4 +87,9 @@ export const WapperFooter = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  ${media.lessThan('small')`
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+  `}
 `
