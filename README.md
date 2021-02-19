@@ -48,3 +48,8 @@ yarn build
 Compila o aplicativo para produção na pasta `build`. \
 Ele agrupa corretamente o React no modo de produção e otimiza a construção para o melhor desempenho.
 > Que a força esteja com você. 🖖
+
+## License
+
+[MIT License](/LICENSE) © Rodrigo Oliveira
+
