@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styled'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import GlobalStyle from 'Styles/global'
 import Search from 'components/Search'
@@ -14,6 +14,7 @@ import { useTransport } from 'Utils/context'
 
 const Layout = () => {
   const { modalVisible } = useTransport()
+
   return (
     <>
       <GlobalStyle />
@@ -26,11 +27,15 @@ const Layout = () => {
           </Header>
           <Main>
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/" />
+              <Route path="/search">
                 <ListCharacters />
               </Route>
-              <Route path="/:id">
+              <Route path="/:id(\d+)">
                 <Character />
+              </Route>
+              <Route>
+                <Redirect to="/" />
               </Route>
             </Switch>
           </Main>

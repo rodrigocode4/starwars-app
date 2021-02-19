@@ -11,6 +11,7 @@ const Character = () => {
   const [character, setCharacter] = useState<ICharacter>()
   const { pathname } = useLocation()
   const numberOfPeople = pathname.replace(/^\//, '')
+
   useEffect(() => {
     if (character !== undefined) {
       return

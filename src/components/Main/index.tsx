@@ -8,7 +8,7 @@ type Node = {
 
 const Main = ({ children }: Node) => {
   const { pathname } = useLocation()
-  const isCharacterIfo = pathname !== '/'
+  const isCharacterIfo = /^(\/\d+\/?)$/gm.test(pathname)
   return <S.LayoutMain isCharacterIfo={isCharacterIfo}>{children}</S.LayoutMain>
 }
 

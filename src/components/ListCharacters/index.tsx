@@ -2,23 +2,22 @@ import React, { useState, useEffect } from 'react'
 import * as S from './styled'
 import { Character } from 'Utils/types'
 import SearchItem from 'components/SearchItem'
-import { useSearch } from 'Utils/search.context'
+import { useLocation } from 'react-router-dom'
 
 const ListCharacters = () => {
-  const { search } = useSearch()
   const [characters, setCharacters] = useState<Character[]>()
+  const location = useLocation()
+  const queryValue = new URLSearchParams(location.search).get('q') || ''
 
   useEffect(() => {
-    if (characters !== undefined) {
-      return
-    } else {
-      getData(search)
-    }
-  }, [search, characters])
+    getData(queryValue)
+  }, [])
 
-  async function getData(search: string) {
-    if (search !== '') {
-      const rs = await fetch(`https://swapi.dev/api/people/?search=${search}`)
+  async function getData(nameCharacter: string) {
+    if (nameCharacter !== '') {
+      const rs = await fetch(
+        `https://swapi.dev/api/people/?search=${nameCharacter}`
+      )
       const { results } = await rs.json()
 
       const data: Array<Character> = []
