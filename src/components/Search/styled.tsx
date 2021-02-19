@@ -55,9 +55,6 @@ export const SearchBottom = styled.button.attrs({
   border-width: 0px;
   font-size: 10px;
   text-indent: center;
-  border-style: none;
-  outline: #ffe81f;
-  border-color: #ffe81f;
   &:hover {
     cursor: pointer;
   }
