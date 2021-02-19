@@ -26,7 +26,7 @@ const Search = () => {
         <S.SearchInput
           autoFocus
           type="text"
-          placeholder="Buscar personagem..."
+          placeholder="ex: Luke Skywalker"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />

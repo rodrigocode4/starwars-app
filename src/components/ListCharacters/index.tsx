@@ -11,6 +11,7 @@ const ListCharacters = () => {
 
   useEffect(() => {
     getData(queryValue)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function getData(nameCharacter: string) {
